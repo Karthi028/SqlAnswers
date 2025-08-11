@@ -1,33 +1,6 @@
-customer: 
-          +----+--------+------------------+-------------------+
-          | id | name   | email            | address           |
-          +----+--------+------------------+-------------------+
-          |  1 | suresh | suresh@gmail.com | chennai-600001    |
-          |  2 | suriya | suriya@gmail.com | coimbatore-600001 |
-          |  3 | ariya  | ariya@gmail.com  | chennai-600001    |
-          |  4 | bojana | bojana@gmail.com | madurai-600001    |
-          +----+--------+------------------+-------------------+
-
-orders:
-        +----+-------------+------------+--------------+
-        | id | customer_id | order_date | total_amount |
-        +----+-------------+------------+--------------+
-        |  1 |           1 | 2025-01-10 |          300 |
-        |  2 |           2 | 2025-01-17 |          100 |
-        |  3 |           1 | 2025-02-10 |          200 | 
-        |  4 |           4 | 2025-03-10 |          300 |
-        |  5 |           3 | 2025-01-10 |          500 |
-        +----+-------------+------------+--------------+
-
-products:
-          +----+--------+-------+-----------------+
-          | id | name   | price | description     |
-          +----+--------+-------+-----------------+
-          |  1 | Shirt  |   100 | full hand shirt |
-          |  2 | shoe   |   200 | cushioned Shoe  |
-          |  3 | holder |   100 | shirts holder   |
-          |  4 | comb   |   100 | wodden comb     |
-          +----+--------+-------+-----------------+
+![customer table](image.png) 
+![orders table](image.png) 
+![products table](image.png)
 
 
 1: Retrieve all customers who have placed an order in the last 30 days.
@@ -92,33 +65,8 @@ products:
 
               what we have done here is created a order_items table where order_id is foreign key of orders id products_id is foreign key of products id...and the price will be the total price that is price * quantity...
 
-
-orders table now:              
-
-+----+-------------+------------+
-| id | customer_id | order_date |
-+----+-------------+------------+
-|  1 |           1 | 2025-01-10 |
-|  2 |           2 | 2025-01-17 |
-|  3 |           1 | 2025-02-10 |
-|  4 |           4 | 2025-03-10 |
-|  5 |           3 | 2025-01-10 |
-+----+-------------+------------+     
-
-order_items table:
-
-+----+----------+------------+----------+--------+
-| id | order_id | product_id | quantity | price  |
-+----+----------+------------+----------+--------+
-|  1 |        1 |          2 |        1 | 200.00 |
-|  2 |        1 |          1 |        1 | 100.00 |
-|  3 |        3 |          4 |        1 | 100.00 |
-|  4 |        2 |          3 |        2 |  90.00 |
-|  5 |        2 |          4 |        2 | 200.00 |
-+----+----------+------------+----------+--------+
-
-
-
+![current orderstable](image.png)
+![order_items Table](image.png)
 
 9: Get the names of customers who have ordered Product A.
 
@@ -133,3 +81,4 @@ order_items table:
           => select avg(total_amount) from orders;
 
           using summirisation with help of avg of particular price column from particular table gives us the result...
+
